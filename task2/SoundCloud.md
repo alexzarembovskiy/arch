@@ -3,12 +3,13 @@
 ### 1) Elements description
 
 - Services:
-1. Load balancer - requests router, to handle POST/PATCH/GET API requests.
-2. DB - relational DB to store user info.
-3. Music storage - S3 blob storage for music. To upload music POST request is being sent. To download - GET request is being used. 
-4. Dynamo DB - key-value storage for user stats, such as likes or music listening progress. Can be used to retrieve statistics per user or song.
-5. Redis - mem-cache DB for recent info storage of user stats. Stats are being cached from Redshift. If stats are not cached - request for fresh data is being send to Redshift. 
-6. Redshift - data warehouse for analytical purposes. Here is being stored detailised info about likes, listening progress. Also, data from DB with user info is being fetched via ETL.
+1. Load balancer - balance load of incoming requests.
+2. API Gateway - request router, to handle POST/PATCH/GET API requests.
+3. DB - relational DB to store user info.
+4. Music storage - S3 blob storage for music. To upload music POST request is being sent. To download - GET request is being used. 
+5. Dynamo DB - key-value storage for user stats, such as likes or music listening progress. Can be used to retrieve statistics per user or song.
+6. Redis - mem-cache DB for recent info storage of user stats. Stats are being cached from Redshift. If stats are not cached - request for fresh data is being send to Redshift. 
+7. Redshift - data warehouse for analytical purposes. Here is being stored detailised info about likes, listening progress. Also, data from DB with user info is being fetched via ETL.
 
 - Motivation for REST API architecture:
 1. Simplicity of implementation
