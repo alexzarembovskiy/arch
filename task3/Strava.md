@@ -4,13 +4,15 @@
 
 - Services:
 
-1. Kinesis Data Stream - streaming service that consumes incoming data from the app and produce it to speed and long-terms storages.
-2. Kinesis Firehose - ETL of incoming streaming data. This service will help to apply simple transformation of incoming data and store it in the final storage.
-3. S3 - blob storage for long-term storage of data. Data will be stored in batches (windows).
-4. Timestream - time-series database service that suits for consumption of incoming streaming data and further analytical purposes.
-5. Quicksight - BI service that consumes data in Timestream storage and visualize it for the final user.
+1. Load balancer - balance work load of incoming requests.
+2. DB - storage for user info.
+3. Kinesis Data Stream - streaming service that consumes incoming data from the app and produce it to speed and long-terms storages.
+4. Kinesis Firehose - ETL of incoming streaming data. This service will help to apply simple transformation of incoming data and store it in the final storage.
+5. S3 - blob storage for long-term storage of working-out sessions data. Data will be stored in batches (windows).
+6. Timestream - time-series database service that suits for consumption of incoming streaming data and further analytical purposes. Here will be stored working-out sessions data for analysis purposes.
+7. Quicksight - BI service that consumes data in Timestream storage and visualize it for the final user.
 
-- Motivation for Kappa architecture:
+- Motivation for Kappa-like architecture:
 
 1. High reliability
 2. High speed
